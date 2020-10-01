@@ -1,0 +1,8 @@
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^blogforteroche\.fj\-consulting\.fr$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.blogforteroche\.fj\-consulting\.fr$
+RewriteRule ^(.*)$ "https\:\/\/blogforteroche\.fj\-consulting\.fr\/$1" [R=301,L]
+
